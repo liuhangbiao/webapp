@@ -5,12 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "commit":"git pull && git add . && git commit -m 'update' && git push",
+    "commit": "git pull && git add . && git commit -m 'update' && git push",
     "watch": "webpack --watch",
-    "build": "cross-env NODE_ENV=production webpack",
-    "start": "webpack --config webpack.config.js",
-    "server": "webpack-dev-server --open",
-    "server1": "browser-sync start --server --file '**/*.*'",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --open",
+    "server": "browser-sync start --server --file '**/*.*'",
     "clear": "rm -rf ./dist/**"
   },
   "repository": {
@@ -33,16 +32,17 @@
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
-    "html-webpack-plugin": "^2.29.0",
+    "html-webpack-plugin": "^2.30.1",
     "less-loader": "^4.0.5",
+    "postcss-loader": "^2.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
-    "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.6.1",
-    "handlebars-loader": "^1.5.0"
+    "vue-loader": "^13.0.4",
+    "vue-template-compiler": "^2.4.2",
+    "webpack": "^3.5.2",
+    "webpack-dev-server": "^2.7.1"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "bugs": {
     "url": "https://github.com/liuhangbiao/webapp/issues"
   },
