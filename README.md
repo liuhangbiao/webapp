@@ -118,5 +118,4 @@ module.exports = {
 #### 安装npm包到项目
 ```
 $ npm i postcss-loader autoprefixer-loader babel-core babel-loader babel-preset-es2015 babel-preset-react clean-webpack-plugin css-loader extract-text-webpack- plugin file-loader html-webpack-plugin less-loader style-loader url-loader vue-loader vue-template-compiler webpack webpack-dev-server  --save-dev
-npm WARN deprecated autoprefixer-loader@3.2.0: Please use postcss-loader instead of autoprefixer-loader
 ```
