@@ -1,0 +1,82 @@
+/* 两列右侧自适应布局 */
+/* 用法：
+*	<div class="g-bd1 f-cb">
+*		<div class="g-sd1"><p>左侧定宽</p></div>
+*		<div class="g-mn1"><div class="g-mn1c"><p>右侧自适应</p></div></div>
+*	</div>
+*/
+.g-bd1{margin:0 0 10px;}
+.g-sd1{position:relative;float:left;width:190px;margin-right:-190px;}
+.g-mn1{float:right;width:100%;}
+.g-mn1c{margin-left:200px;}
+
+
+/* 两列左侧自适应布局 */
+/* 用法：
+ *	 <div class="g-bd2 f-cb">
+ *	    <div class="g-mn2"><div class="g-mn2c"><p>左侧自适应</p></div></div>
+ *	    <div class="g-sd2"><p>右侧定宽</p></div>
+ *	</div>
+ */
+.g-bd2{margin:0 0 10px;}
+.g-sd2{position:relative;float:right;width:230px;margin-left:-230px}
+.g-mn2{float:left;width:100%;;}
+.g-mn2c{margin-right:240px;}
+
+
+/* 两列定宽布局 */
+/* 用法：
+ *<div class="g-bd f-cb">
+ *  <div class="g-mn"><p>左侧定宽</p></div>
+ *   <div class="g-sd"><p>右侧定宽</p></div>
+ *</div>
+ */
+
+.g-bd{width:950px;margin:0 auto;}
+.g-sd{float:right;width:230px;}
+.g-mn{float:left;width:710px;}
+
+
+/* 三列中间自适应布局 */
+/* 用法：
+ *<div class="g-bd5 f-cb">
+ * <div class="g-sd51"><p>左侧定宽</p></div>
+ *  <div class="g-mn5"><div class="g-mn5c"><p>中间自适应</p></div></div>
+ *   <div class="g-sd52"><p>右侧定宽</p></div>
+ *</div>
+ */
+.g-bd5{margin:0 0 10px;}
+.g-sd51,.g-sd52{position:relative;float:left;width:230px;margin:0 -230px 0 0;}
+.g-sd52{float:right;width:190px;margin:0 0 0 -190px;}
+.g-mn5{float:left;width:100%;}
+.g-mn5c{margin:0 200px 0 240px;}
+
+
+/* 三列左侧自适应布局 */
+/* 用法：
+ *<div class="g-bd4 f-cb">
+ *  <div class="g-mn4"><div class="g-mn4c"><p>左侧自适应</p></div></div>
+ *   <div class="g-sd41"><p>右侧定宽</p></div>
+ *  <div class="g-sd42"><p>右侧定宽</p></div>
+ *</div>
+ */
+.g-bd4{margin:0 0 10px;}
+.g-sd41,.g-sd42{position:relative;float:right;width:190px;}
+.g-sd41{width:230px;margin-left:10px;}
+.g-mn4{float:left;width:100%;margin-right:-430px;}
+.g-mn4c{margin-right:440px;}
+
+
+/* 三列右侧自适应布局 */
+/* 用法：
+ *<div class="g-bd3 f-cb">
+ *  <div class="g-sd31"><p>左侧定宽</p></div>
+ *   <div class="g-sd32"><p>左侧定宽</p></div>
+ *   <div class="g-mn3"><div class="g-mn3c"><p>右侧自适应</p></div></div>
+ *</div>
+ */
+.g-bd3{margin:0 0 10px;}
+.g-sd31,.g-sd32{position:relative;float:left;width:230px;}
+.g-sd31{width:190px;margin-right:10px;}
+.g-mn3{float:right;width:100%;margin-left:-430px;}
+.g-mn3c{margin-left:440px;}

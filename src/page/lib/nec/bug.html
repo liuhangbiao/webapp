@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bug</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="bug.css">
+</head>
+<body>
+<h2>bug</h2>
+<div class="m-demo">
+    <div class="content"></div>
+    <div class="absolute"></div>
+</div>
+<h2>fix</h2>
+<div class="m-demo m-demo-fix">
+    <div class="content"></div>
+    <div class="absolute"></div>  
+</div>
+<p>效果描述：灰色为“相对定位的父容器”的padding，红色为“相对定位的父容器”的内容区，绿色为“绝对定位的子容器”</p>
+<p>问题：如果参照物没有触发haslayout，那么在ie6中“绝对定位的容器”的left和bottom就会有问题</p>
+<p>解决方案：在“相对定位的父容器”上加入 <strong>zoom:1</strong> 来触发ie的haslayout即可解决</p>
+<p>小技巧：通常我们在设置一个容器为position:relative的时候，都会加上zoom:1来解决很多ie下的问题</p>
+
+<br>
+<div class="g-cnt">  
+    <h2>bug</h2>
+    <div class="m-demo">
+        <div class="content1">在ie67下，红色区域溢出，拖动垂直或水平滚动条时，红色区域不会动</div>
+        <div class="relative">position:relative;</div>
+        <div class="content2">&nbsp;</div>
+    </div>
+    <h2>fix</h2>
+    <div class="m-demo m-demo-fix">
+        <div class="content1">只需要在有滚动条的容器上也设置相对定位即可。</div>
+        <div class="relative">position:relative;</div>
+        <div class="content2">&nbsp;</div>
+    </div>
+</div>
+
+<br>
+<h2>bug</h2>
+<p>IE6下参照物宽高为奇数时，绝对定位元素设置了位置为0或100%时，仍会有1px的空隙</p>
+<div class="m-demo">
+    <div class="itm itm-1">&nbsp;</div>
+    <div class="itm itm-2">&nbsp;</div>
+    <div class="itm itm-3">&nbsp;</div>
+    <div class="itm itm-4">&nbsp;</div>
+</div>    
+<h2>fix</h2>
+<p>设为偶数</p>
+<div class="m-demo m-demo-fix">
+    <div class="itm itm-1">&nbsp;</div>
+    <div class="itm itm-2">&nbsp;</div>
+    <div class="itm itm-3">&nbsp;</div>
+    <div class="itm itm-4">&nbsp;</div>
+</div>  
+
+
+<br>
+<h2>bug</h2>
+<div class="m-demo">
+    <div class="float">浮动元素在前</div>
+    <div class="absolute">&nbsp;</div>
+</div>
+<div class="m-demo">
+    <div class="absolute">&nbsp;</div>
+    <div class="float">浮动元素在后</div>
+</div>
+<h2>fix</h2>
+<div class="m-demo m-demo-fix1">
+    <div class="float">浮动元素在前</div>
+    <div class="absolute">&nbsp;</div>
+</div>
+<div class="m-demo m-demo-fix2">
+    <div class="absolute">&nbsp;</div>
+    <div class="float">浮动元素在后</div>
+</div>
+
+<br>
+<h2>bug</h2>
+<p>第一个左浮动元素的margin-left加倍</p>
+<div class="m-demo">
+    <div class="itm itm-left">1</div>
+    <div class="itm itm-left">2</div>
+    <div class="itm itm-left">3</div>
+</div>
+<p>第一个右浮动元素的margin-right加倍</p>
+<div class="m-demo">
+    <div class="itm itm-right">1</div>
+    <div class="itm itm-right">2</div>
+    <div class="itm itm-right">3</div>
+</div>
+<h2>fix</h2>
+<p>因为内联元素没有此问题，所以通过设置display:inline解决</p>
+<div class="m-demo m-demo-fix">
+    <div class="itm itm-left">1</div>
+    <div class="itm itm-left">2</div>
+    <div class="itm itm-left">3</div>
+</div> 
+<div class="m-demo m-demo-fix">
+    <div class="itm itm-right">1</div>
+    <div class="itm itm-right">2</div>
+    <div class="itm itm-right">3</div>
+</div> 
+
+<br>
+<h2>bug</h2>
+<p>通常所见的浮动产生的3像素的bug(在IE6下灰色容器里，与红色区域平行的前几行文本左侧有3像素空隙)：</p>
+<div class="m-demo"> 
+    <div class="float">XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX</div>
+    <div>XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX</div>
+</div>   
+<h2>fix</h2>
+<p>采用负外边距的方法，可解决该bug</p>
+<div class="m-demo m-demo-fix"> 
+    <div class="float">XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX</div>
+    <div>XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX</div>
+</div> 
+
+
+<br>
+<h2>bug</h2>
+<p>当“某些表单元素”的“父元素上触发了haslayout”后，这些表单元素会以“祖先元素上的margin-left值”偏离</p>
+<div class="m-demo">
+	<div class="itm"><input /></div>
+    <div class="itm"><textarea></textarea></div>
+</div>	
+<h2>fix</h2>
+<p>在“父元素外或内”“再嵌套一个触发haslayout的元素”即可</p>
+<div class="m-demo m-demo-fix">
+    <div class="itm"><div class="inner"><input /></div></div>
+    <div class="itm"><div class="inner"><textarea></textarea></div></div>
+</div>
+
+<br>
+<h2>bug</h2>
+	<p>ie6、7，对于以下这样的结构，如果span触发了haslayout，那么图片区域将点击无效</p>
+	<div class="m-demo"> 
+		<a href="#link">
+			<span>
+				<img src="http://img1.cache.netease.com/cnews/2009/11/9/20091109151554a1569.jpg" />
+			</span>
+		</a>
+	</div> 
+	<h2>fix</h2>
+	<p>给图片设置position:relative;z-index:-1;再给a设置cursor:pointer;</p>
+	<div class="m-demo m-demo-fix">
+		<a href="#link">
+			<span>
+				<img src="http://img1.cache.netease.com/cnews/2009/11/9/20091109151554a1569.jpg" />
+			</span>
+		</a>
+	</div> 
+
+</body>
+</html>

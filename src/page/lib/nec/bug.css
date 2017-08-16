@@ -1,0 +1,59 @@
+/* IE6中定位位置错误 */ 
+.m-demo{position:relative;margin:0 0 10px;padding:20px;background:#ddd;color:#fff;font-size:12px;}
+.m-demo .content{width:100%;height:20px;background:#ff0097;word-wrap:break-word;}
+.m-demo .absolute{position:absolute;bottom:0;left:0;width:50px;height:50px;background:#4eb3b9;word-wrap:break-word;}
+.m-demo-fix{zoom:1;}
+
+
+/* IE67中定位元素溢出不动  */
+.m-demo{width:300px;height:250px;margin-top:10px;overflow:auto;border:1px solid #666;}
+.m-demo .content1{height:100px;padding-top:5px;}
+.m-demo .content2{height:500px;}
+.m-demo .relative{position:relative;width:400px;background:#f00;}
+.m-demo-fix{position:relative;}
+
+
+/* IE6中绝对定位1像素偏差 */ 
+.m-demo{position:relative;width:501px;height:101px;margin:0 0 20px;background:#ff0097;}
+.m-demo .itm{position:absolute;width:20px;height:20px;overflow:hidden;background:#4eb3b9;}
+.m-demo .itm-1{top:0;left:0;background:#999;}
+.m-demo .itm-2{top:0;right:0;}
+.m-demo .itm-3{left:100%;top:100%;}
+.m-demo .itm-4{left:0;bottom:0;}
+.m-demo-fix{width:500px;height:100px;}
+
+
+/* IE6中定位元素消失 */ 
+.m-demo{position:relative;width:400px;height:100px;margin:0 0 20px;border:1px solid #444;color:#fff;}
+.m-demo .float{float:left;width:400px;line-height:2;text-align:center;background:#ccc;}
+.m-demo .absolute{position:absolute;width:20px;height:20px;background:#f00;top:0;left:0;}
+.m-demo-fix1 .absolute{clear:both;}
+.m-demo-fix2 .float{_margin-right:-3px;/* 和浮动方向相反即可 */}
+
+
+/* IE6中浮动双边距 */
+.m-demo{width:400px;height:20px;margin:0 0 10px;background:#ddd;}
+.m-demo .itm{width:20px;height:20px;line-height:20px;text-align:center;color:#fff;background:#ff0097;}
+.m-demo .itm-left{float:left;margin-left:20px;}
+.m-demo .itm-right{float:right;margin-right:20px;}
+.m-demo-fix .itm{display:inline;}
+
+
+/* IE6中浮动3像素空隙 */ 
+.m-demo{width:400px;margin:0 0 10px;background:#ddd;} 
+.m-demo .float{float:left;width:200px;background:#ff0097;}
+.m-demo-fix .float{_margin-right:-3px;}
+
+
+/* IE67中表单元素偏离 */
+.m-demo{width:400px;margin:0 0 10px;background:#ddd;}
+.m-demo .itm{margin-left:100px;zoom:1}
+.m-demo-fix .itm .inner{zoom:1;}
+
+
+/* IE67中图片链接无效 */
+.m-demo a,.m-demo a img{width:100px;height:60px;}
+.m-demo a{display:block;}
+.m-demo a span{zoom:1;}
+.m-demo-fix a{cursor:pointer;}
+.m-demo-fix a img{position:relative;z-index:-1;}

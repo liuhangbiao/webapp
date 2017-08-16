@@ -1,0 +1,132 @@
+<style type="text/css">
+@font-face {font-family: "iconfont";
+  src: url('{{font.eot}}?t=1502863305848'); /* IE9*/
+  src: url('{{font.eot}}?t=1502863305848#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('{{font.woff}}?t=1502863305848') format('woff'), /* chrome, firefox */
+  url('{{font.ttf}}?t=1502863305848') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('{{font.svg}}?t=1502863305848#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont { font-family: "iconfont" !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.icon-blog:before { content: "\e629"; }
+.icon-tool:before { content: "\e61a"; }
+.icon-github:before { content: "\e8ee"; }
+.icon-tool1:before { content: "\e97b"; }
+.icon-close:before { content: "\e63c"; }
+.icon-love:before { content: "\e66b"; }
+.icon-case:before { content: "\e61b"; }
+.icon-blog1:before { content: "\e631"; }
+.icon-fontAwesome_th:before { content: "\e84d"; }
+.icon-fontAwesome_ul:before { content: "\e872"; }
+.icon-mzicon-setting:before { content: "\e606"; }
+
+
+    /* 全屏自适应布局  */
+html,body{width:100%;height:100%;overflow:hidden;margin:0;background-color: #b9f6ca;background: radial-gradient(circle,rgba(185,246,202,.5),rgba(0,230,118,.5));}
+html{_height:auto;_padding:65px 0 65px;}
+a{text-decoration: none;color: #333;}
+ul,li{list-style: none;}
+.g-hd,.g-mn,.g-ft{position:absolute;left:0;}
+.g-hd,.g-ft{width:100%;}
+.g-mn{top:70px;bottom:65px;_height:100%;overflow:auto;}
+.g-hd{top:0;height:65px;background: linear-gradient(270deg,#4caf50,#449d48);border-bottom: 5px solid rgba(0,0,0,.1); box-shadow: 0 0 100px 10px rgba(0,0,0,.25);}
+.g-mn{_position:relative;left:0px;right:0;_top:0;_left:0;_margin-left:0px;}
+.g-ft{bottom:0;height:65px;    background: linear-gradient(90deg,#4caf50,#449d48);border-top: 5px solid rgba(0,0,0,.1); box-shadow: 0 0 100px 10px rgba(0,0,0,.25);}
+.container { position: relative; background: #fff; width: 1200px; margin: 20px auto; height: 1000px; box-shadow: 0 0 100px 0 rgba(0, 0, 0, .25) !important; transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1); display: block; padding: 24px; border-radius: 2px; }
+.box{margin: 0 24px;}
+.m-btn{padding: 3px 6px;color: #fff;font-style: normal;}
+.m-logo{height: 50px;padding-top: 10px;}
+.m-logo:hover{opacity: .8;filter: alpha(opacity=80);}
+.m-menu{font-size: 16px;color: #fff;padding: 8px 16px;margin-top: 15px;cursor: pointer;}
+.m-menu i{padding-right: 3px;font-size: 18px;}
+.m-menu:hover{background: rgba(68,150,70,0.8);}
+.m-menu em{font-style: normal;}
+
+.pdt15{ padding-top: 15px;}
+.f-fr{float: right;}
+.f-fl{float: left;}
+.f-dn{display: none;}
+
+.tool-layer{position:absolute;left:0;width: 200px;bottom: 70px;background: #fff;top:0;z-index: 9;}
+.tool-box,.menu-box{overflow: auto;height: 85%}
+.tool-box li a{font-size: 14px;}
+
+.menu-layer{position:absolute;right:0;width: 200px;bottom: 0;background: #fff;top:70px;z-index: 9;box-shadow: 0 8px 10px -5px rgba(0,0,0,.2),0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,.12)}
+
+.bg{background: #000;opacity: .6;filter: alpha(opacity=60);position: absolute;left: 0;top: 0;bottom: 70px;right: 0;z-index: 1;}
+.bg1{background: #000;opacity: .6;filter: alpha(opacity=60);position: absolute;left: 0;top: 70px;bottom: 0;right: 0;z-index: 1;}
+@media screen and (max-width:1200px) {
+    .container { width: 90%; }
+    .m-menu em{display: none;}
+}
+</style>
+
+<div class="g-hd">
+   <div class="box">
+      <span class="m-btn"><img src="{{logo}}" class="m-logo"></span>
+      <span class="m-menu f-fr" id="menu"><i class="iconfont icon-fontAwesome_ul"></i> Packages</span>
+   </div>
+</div>
+<div class="g-mn">
+    <div class="container">
+        ccccccccccccccc
+        {{root}}
+        {{font.eot}}
+    </div>
+</div>博客
+<div class="g-ft">
+    <div class="box pdt15">
+        <div class="f-fr">
+            <a class="m-menu" href="https://github.com/liuhangbiao/webapp/" target="_blank"><i class="iconfont icon-github"></i><em>Github</em></a>
+            <a class="m-menu" href="http://jsgu.net" target="_blank"><i class="iconfont icon-blog"></i><em>Blog</em></a>
+            <a class="m-menu" href="https://jsgu.github.io/" target="_blank"><i class="iconfont icon-case"></i><em>Case</em></a>
+            <span class="m-menu"><em>Copyright © 2017 道心. All Rights Reserved.</em></span>
+        </div>
+        <div class="f-fl">
+            <span class="m-menu" id="tool"><i class="iconfont icon-tool1"></i>Tool</span>
+        </div>
+    </div>
+</div>
+<!-- tool -->
+<div class="bg" id="bg" style="display: none;"></div>
+<div class="tool-layer" id="tool-layer" style="display: none;">
+    <ul class="tool-box">
+        <li><a href="#"><i>X</i><em>Tool</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+    </ul>
+</div>
+<!-- tool end-->
+<!-- menu -->
+<div class="bg1" id="bg1" style="display: none;"></div>
+<div class="menu-layer" id="menu-layer" style="display: none;">
+    <ul class="menu-box">
+        <li><a href="#"><i>X</i><em>Tool</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+    </ul>
+</div>
+<!-- menu end-->
