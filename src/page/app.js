@@ -19,20 +19,3 @@ var hd = require('./tool/tool.js');
 document.getElementById('app').innerHTML = hd;
 require('./tool/index.js')
 
-
-
-
-// document.querySelectorAll('.menu_bt')[0].onclick = function() {
-//     document.querySelectorAll('.page-overlay').className = 'block';
-// }
-
-/*
- * 添加事件
- */
-
-
-// $(".menu_bt").click(function() {
-//     $(this).toggleClass("open");
-//     $(".page-overlay").toggleClass("black");
-//     $(".logo").toggleClass("gao");
-// })
