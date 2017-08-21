@@ -19,19 +19,20 @@
 .icon-fontAwesome_ul:before { content: "\e872"; }
 .icon-mzicon-setting:before { content: "\e606"; }
 
-
+*{padding: 0;margin: 0;}
     /* 全屏自适应布局  */
 html,body{width:100%;height:100%;overflow:hidden;margin:0;background-color: #b9f6ca;background: radial-gradient(circle,rgba(185,246,202,.5),rgba(0,230,118,.5));}
 html{_height:auto;_padding:65px 0 65px;}
 a{text-decoration: none;color: #333;}
 ul,li{list-style: none;}
+em,i{font-style: normal;}
 .g-hd,.g-mn,.g-ft{position:absolute;left:0;}
 .g-hd,.g-ft{width:100%;}
 .g-mn{top:70px;bottom:65px;_height:100%;overflow:auto;}
 .g-hd{top:0;height:65px;background: linear-gradient(270deg,#4caf50,#449d48);border-bottom: 5px solid rgba(0,0,0,.1); box-shadow: 0 0 100px 10px rgba(0,0,0,.25);}
 .g-mn{_position:relative;left:0px;right:0;_top:0;_left:0;_margin-left:0px;}
 .g-ft{bottom:0;height:65px;    background: linear-gradient(90deg,#4caf50,#449d48);border-top: 5px solid rgba(0,0,0,.1); box-shadow: 0 0 100px 10px rgba(0,0,0,.25);}
-.container { position: relative; background: #fff; width: 1200px; margin: 20px auto; height: 1000px; box-shadow: 0 0 100px 0 rgba(0, 0, 0, .25) !important; transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1); display: block; padding: 24px; border-radius: 2px; }
+.container { position: relative; background: #fff; width: 1200px; margin: 20px auto; min-height:500px; box-shadow: 0 0 100px 0 rgba(0, 0, 0, .25) !important; transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1); display: block; padding: 24px; border-radius: 2px; }
 .box{margin: 0 24px;}
 .m-btn{padding: 3px 6px;color: #fff;font-style: normal;}
 .m-logo{height: 50px;padding-top: 10px;}
@@ -47,10 +48,32 @@ ul,li{list-style: none;}
 .f-dn{display: none;}
 
 .tool-layer{position:absolute;left:0;width: 200px;bottom: 70px;background: #fff;top:0;z-index: 9;}
-.tool-box,.menu-box{overflow: auto;height: 85%}
+.tool-box,.menu-box{overflow: auto;height: 100%}
 .tool-box li a{font-size: 14px;}
 
 .menu-layer{position:absolute;right:0;width: 200px;bottom: 0;background: #fff;top:70px;z-index: 9;box-shadow: 0 8px 10px -5px rgba(0,0,0,.2),0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,.12)}
+
+.tool-box li,.menu-box li{
+    padding: 6px 0;text-indent: 1rem;
+}
+.tool-box li a,.menu-box li a{
+    font-size: 14px;color: #666;
+}
+.tool-box li a .iconfont,.menu-box li a .iconfont{padding-right: 3px;}
+.tool-box li:hover,.menu-box li:hover{
+     background: #f6f6f6;
+}
+
+.m-from{
+    position: relative;
+    width: 80%;
+    margin: 15px auto;
+    text-align: center;
+    margin-top: 100px;
+    box-shadow: 0 0 100px 0 rgba(0, 0, 0, .25) !important;
+}
+.m-from .m-str{height: 54px;background: #f4f4f4;border: 0;display: block;text-indent: 1em;color: #777;font-size: 15px;width: 100%;}
+.m-from .m-btn{display: block;padding:0 30px;height: 54px;line-height:54px;background: #090;float: right;position: absolute;top: 0;right: 0;font-size: 15px;width: 100px;}
 
 .bg{background: #000;opacity: .6;filter: alpha(opacity=60);position: absolute;left: 0;top: 0;bottom: 70px;right: 0;z-index: 1;}
 .bg1{background: #000;opacity: .6;filter: alpha(opacity=60);position: absolute;left: 0;top: 70px;bottom: 0;right: 0;z-index: 1;}
@@ -68,9 +91,12 @@ ul,li{list-style: none;}
 </div>
 <div class="g-mn">
     <div class="container">
-        ccccccccccccccc
-        {{root}}
-        {{font.eot}}
+       <div id="rootApp">
+           <div class="m-from">
+               <input type="text" class="m-str" name="str" id="str">
+               <a href="#" class="m-btn" id="toBe">转BASE64</a>
+           </div>
+       </div>
     </div>
 </div>博客
 <div class="g-ft">
@@ -90,21 +116,9 @@ ul,li{list-style: none;}
 <div class="bg" id="bg" style="display: none;"></div>
 <div class="tool-layer" id="tool-layer" style="display: none;">
     <ul class="tool-box">
-        <li><a href="#"><i>X</i><em>Tool</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+        {{#each tooldata}}
+            <li id="{{id}}"><a href="{{code}}"><i class="iconfont {{icon}}"></i><em>{{text}}</em></a></li>
+        {{/each}}
     </ul>
 </div>
 <!-- tool end-->
@@ -112,21 +126,9 @@ ul,li{list-style: none;}
 <div class="bg1" id="bg1" style="display: none;"></div>
 <div class="menu-layer" id="menu-layer" style="display: none;">
     <ul class="menu-box">
-        <li><a href="#"><i>X</i><em>Tool</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
-        <li><a href="#"><i>X</i><em>js代码混淆</em></a></li>
+      {{#each menudata}}
+            <li id="{{id}}"><a href="{{code}}"><i class="iconfont {{icon}}"></i><em>{{text}}</em></a></li>
+      {{/each}}
     </ul>
 </div>
 <!-- menu end-->

@@ -65,6 +65,11 @@ module.exports = {
                 exclude: /^node_modules$/,
                 loaders: ['babel-loader?presets[]=es2015&presets[]=react'],
             },
+            // {
+            //     test: /.htmls?$/,
+            //     exclude: /^node_modules$/,
+            //     loader: 'file-loader?name=[path][name].[ext]!extract-loader!html-loader',
+            // },
             {
                 test: /\.vue$/,
                 exclude: /^node_modules$/,

@@ -83,9 +83,16 @@
                 return Math.floor(d) + "天" + JSON.stringify([d, h, m, s])
             }
         },
-        isGo: () => {
-            console.log("Hello IsGs")
-        }
+        addCSS: (cssText) => {
+                var style = document.createElement('style'),
+                    head = document.head || document.getElementsByTagName('head')[0];
+                style.type = 'text/css';
+                if (style.styleSheet) { var func = function() { try { style.styleSheet.cssText = cssText; } catch (e) {} }; if (style.styleSheet.disabled) { setTimeout(func, 10); } else { func(); } } else {
+                    var textNode = document.createTextNode(cssText);
+                    style.appendChild(textNode);
+                }
+                head.appendChild(style);
+            }
     };
     return base;
 }));

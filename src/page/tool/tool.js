@@ -1,15 +1,19 @@
 var headerTpl = require('./tool.hbs');
-
-// 函数
-var dao={
-	yy:function(){
-		
-	}
-}
-
-
-var data = {font:{eot:require('./font/iconfont.eot'),woff:require('./font/iconfont.woff'),ttf:require('./font/iconfont.ttf'),svg:require('./font/iconfont.svg')},
-		logo:require('./logo.png'),title: 'hello HBS!', body: '基于webpack 的hbs运用，道心版权。',
-		dao:dao}; //data可以用参数传入
+var data = {
+		font:{eot:require('./font/iconfont.eot'),woff:require('./font/iconfont.woff'),ttf:require('./font/iconfont.ttf'),svg:require('./font/iconfont.svg')},
+		logo:require('./logo.png'),
+		rootApp:location.href,
+		tooldata:[
+			{id:'sousuo',code:'#c291c3Vv',icon:'icon-tool1',text:'聚合搜索'},
+			{id:'jshunxiao',code:'#jshunxiao',icon:'icon-tool1',text:'js正则验证'},
+			{id:'',code:'#',icon:'icon-tool1',text:'js混淆test'}
+		],
+		menudata:[
+			{id:'sousuo',code:'#c291c3Vv',icon:'icon-tool1',text:'综合搜索'},
+			{id:'jshunxiao',code:'#jshunxiao',icon:'icon-tool1',text:'js混淆'},
+			{id:'',code:'#',icon:'icon-tool1',text:'js混淆test'}
+		]
+	};
 var header = headerTpl(data);
-module.exports = header;
+document.getElementById('app').innerHTML =header;
+var sc=require('./index.js')
