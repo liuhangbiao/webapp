@@ -1,6 +1,6 @@
 # webapp
 webapp初始化项目基本结构，基于webpack等
-
+[![Build Status](https://travis-ci.org/liuhangbiao/webapp.svg?branch=master)](https://travis-ci.org/liuhangbiao/webapp)
 ### package.json配置
 ```
   "scripts": {
