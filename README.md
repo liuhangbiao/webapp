@@ -119,3 +119,15 @@ module.exports = {
 ```
 $ npm i postcss-loader autoprefixer-loader babel-core babel-loader babel-preset-es2015 babel-preset-react clean-webpack-plugin css-loader extract-text-webpack- plugin file-loader html-webpack-plugin less-loader style-loader url-loader vue-loader vue-template-compiler webpack webpack-dev-server  --save-dev
 ```
+
+
+### Dockerfile
+
+```
+docker build -t webapp .
+
+<!-- D:\workpase\demo\taxs\dist\:/usr/share/nginx/html -->
+docker run --name webapp -d -p 80:9000 -v $PWD\:/webapp -w /webapp webapp
+删除无用的 Voulume
+docker rm -v
+```

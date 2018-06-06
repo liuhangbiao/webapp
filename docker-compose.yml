@@ -1,0 +1,27 @@
+version: "2"
+services:
+  jsconsole:
+    build: .
+    volumes:
+      - .:/mnt/webapp
+#      - /mnt/webapp/node_modules
+    ports:
+      - "9000:9000"
+    command: "npm start"
+    restart: always
+# version: "2"
+# services:
+#   node:
+#     image: "node:9.11.1-alpine"
+#     working_dir: /webapp
+#    environment:
+#      - NODE_ENV=production
+    # build: .
+    # command: npm start
+    # volumes:
+    #   - .:/webapp
+    # ports:
+    #   - "9000:9000"
+#    expose:
+#      - "9000"
+#    command: "npm start"

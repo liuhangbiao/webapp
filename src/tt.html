@@ -3,8 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	 <script src="https://unpkg.com/lodash@4.16.6"></script>
 </head>
 <body>
 	<h1>Hello TT</h1>
+	<script>
+		function component() {
+	  var element = document.createElement('div');
+
+	  // Lodash, currently included via a script, is required for this line to work
+	  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+	  element.innerHTML = ['Hello', 'webpack'].join(' ');
+
+	  return element;
+	}
+
+	document.body.appendChild(component());
+	</script>
 </body>
 </html>
