@@ -1,27 +1,33 @@
-version: "2"
+version: '3'
 services:
-  jsconsole:
-    build: .
+  web:
+    image: node:9.11.1-alpine
+    container_name: webapp-server
+    user: root
+    working_dir: /webapp
+    environment:
+      - NODE_ENV=development
     volumes:
-      - .:/mnt/webapp
-#      - /mnt/webapp/node_modules
+      - .:/webapp
+      - /webapp/node_modules
     ports:
-      - "9000:9000"
-    command: "npm start"
+      - 8080:9000
+    command:
+      - /bin/sh
+      - -c
+      - |
+        npm i
+        npm run start
     restart: always
-# version: "2"
-# services:
-#   node:
-#     image: "node:9.11.1-alpine"
-#     working_dir: /webapp
-#    environment:
-#      - NODE_ENV=production
-    # build: .
-    # command: npm start
-    # volumes:
-    #   - .:/webapp
-    # ports:
-    #   - "9000:9000"
-#    expose:
-#      - "9000"
-#    command: "npm start"
+    # (默认只读)有写的权限
+    privileged: true 
+    networks:
+      - webapp-networks
+networks:
+   webapp-networks:
+     driver: bridge
+
+# docker-compose up -d
+# docker-compose ps
+# docker-compose start/stop/restart
+# docker-compose down
