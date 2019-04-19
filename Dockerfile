@@ -16,14 +16,14 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
+EXPOSE 9000
 CMD [ "npm", "start" ]
 
 # docker build -t <your username>/node-web-app .
 # docker images
-# docker run -p 49160:8080 -d <your username>/node-web-app
+# docker run -p 8080:9000 -d <your username>/node-web-app
 # Get container ID=>$ docker ps
 # Print app output=>$ docker logs <container id>
-# Example=>Running on http://localhost:8080
+# Example=>Running on http://localhost:9000
 # Enter the container=>$ docker exec -it <container id> /bin/bash
-# curl -i localhost:49160
+# curl -i localhost:8080
